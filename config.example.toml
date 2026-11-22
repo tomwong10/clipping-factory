@@ -33,8 +33,9 @@ campaign_notes = "Reach LACY GTA VI Marathon pool. Footage must come from Lacy's
 name = "kaicenat"
 url = "https://www.twitch.tv/kaicenat"
 credit = "@kaicenat"
-hashtags = ["#kaicenat", "#gta6"]
-campaign_notes = "Clipped & Shipped Kai Cenat GTA 6 pool. Only GTA 6 moments. Title should name Kai Cenat."
+hashtags = ["#KAICENAT", "#gta6"]
+# Past streams for the vod command: youtube.com/@KaiCenatLive and youtube.com/@KaiCenatGaming
+campaign_notes = "Clipped & Shipped Kai Cenat GTA 6 marathon pool (footage from 18 Nov 2026 onwards). Kai Cenat must be the primary focus for the WHOLE clip, not just the start, and every title must say Kai Cenat by name. Look for funny moments, memorable quotes and big reactions from his GTA 6 marathon. Never show him in a negative light, never invent a negative or false narrative, no hate-farming. No logos."
 
 [[channels]]
 name = "clix"
