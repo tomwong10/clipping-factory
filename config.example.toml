@@ -36,8 +36,8 @@ hashtags = ["#kaicenat", "#gta6", "#streamer"]
 campaign_notes = "Kai Cenat GTA 6 pool campaign. Prefer GTA 6 moments."
 
 [[channels]]
-name = "ishowspeed"
-url = "https://www.youtube.com/@IShowSpeed/live"
-credit = "@ishowspeed"
-hashtags = ["#ishowspeed", "#speed"]
-campaign_notes = "Check the Expedia x IShowSpeed brief: it may only accept footage from specific streams."
+name = "clix"
+url = "https://www.twitch.tv/clix"
+credit = "@clix"
+hashtags = ["#clix", "#gta6", "#fortnite"]
+campaign_notes = "Clix GTA VI marathon pool campaign. Prefer GTA 6 moments."
