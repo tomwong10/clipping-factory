@@ -40,6 +40,7 @@ class Settings:
     keep_raw: bool = False
     keep_ready_days: int = 3
     send_to_telegram: bool = True
+    disclosure: str = "#ad"
     channels: list = field(default_factory=list)
 
     def channel(self, name: str) -> Channel:

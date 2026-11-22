@@ -50,7 +50,7 @@ def _chunks(words: list, size: int = 3, gap: float = 0.6) -> list:
     return groups
 
 
-def build_ass(words: list, start: float, end: float, path: Path, credit: str = "") -> None:
+def build_ass(words: list, start: float, end: float, path: Path, credit: str = "", disclosure: str = "") -> None:
     clip_words = [w for w in words if w["end"] > start and w["start"] < end]
     lines = [ASS_HEADER]
     cap_y = 1300
@@ -74,6 +74,8 @@ def build_ass(words: list, start: float, end: float, path: Path, credit: str = "
             )
     if credit:
         lines.append(f"Dialogue: 1,{_t(0)},{_t(end - start)},Credit,,0,0,0,,{{\\an8\\pos(540,150)}}{_clean(credit)}\n")
+    if disclosure:
+        lines.append(f"Dialogue: 1,{_t(0)},{_t(min(3.0, end - start))},Credit,,0,0,0,,{{\\an8\\pos(540,230)\\fs44}}{_clean(disclosure)}\n")
     path.write_text("".join(lines), encoding="utf-8")
 
 

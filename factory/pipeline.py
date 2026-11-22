@@ -39,7 +39,7 @@ def split(path: Path, minutes: int) -> list:
     return sorted(out_dir.glob("part*.ts"))
 
 
-def _caption(m: dict, channel) -> str:
+def _caption(m: dict, channel, disclosure: str = "") -> str:
     tags = []
     for t in list(m.get("hashtags") or []) + list(channel.hashtags):
         t = t if str(t).startswith("#") else f"#{t}"
@@ -47,7 +47,7 @@ def _caption(m: dict, channel) -> str:
             tags.append(t)
     title = m.get("title") or f"{channel.name} moment"
     body = m.get("caption") or ""
-    return "\n\n".join(x for x in (title, body, " ".join(tags[:8])) if x)
+    return "\n\n".join(x for x in (disclosure, title, body, " ".join(tags[:8])) if x)
 
 
 def process_chunk(video: Path, channel, settings: Settings) -> list:
@@ -71,10 +71,10 @@ def process_chunk(video: Path, channel, settings: Settings) -> list:
         name = f"{channel.name}_{stamp}_{i:02d}"
         ass = work / f"{name}.ass"
         out = READY / f"{name}.mp4"
-        build_ass(words, m["start"], m["end"], ass, channel.credit)
+        build_ass(words, m["start"], m["end"], ass, channel.credit, settings.disclosure)
         if not make_clip(video, m["start"], m["end"], ass, out, settings.layout):
             continue
-        caption = _caption(m, channel)
+        caption = _caption(m, channel, settings.disclosure)
         (READY / f"{name}.txt").write_text(caption + "\n")
         log.info("[%s] Clip ready: %s (%.0fs)", channel.name, out.name, m["end"] - m["start"])
         if settings.send_to_telegram:

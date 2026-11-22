@@ -13,6 +13,7 @@ check_every_seconds = 120   # how often to check if a channel has gone live
 keep_raw = false            # false = delete recordings after clipping (saves disk space)
 keep_ready_days = 3         # delete finished clips from the server after this many days
 send_to_telegram = true
+disclosure = "#ad"           # paid-clip disclosure: shown on screen for 3s and first in the caption ("" to turn off)
 
 # One [[channels]] block per streamer.
 # name: short name, letters and numbers only (no spaces or underscores)
@@ -25,19 +26,19 @@ send_to_telegram = true
 name = "lacy"
 url = "https://www.twitch.tv/lacy"
 credit = "@lacy"
-hashtags = ["#lacy", "#gta6", "#streamer"]
-campaign_notes = "Lacy GTA VI marathon pool campaign. Prefer GTA 6 moments."
+hashtags = ["#LACY", "#gta6"]
+campaign_notes = "Reach LACY GTA VI Marathon pool. Footage must come from Lacy's GTA 6 marathon (started 18 Nov 2026). Lacy must be the main focus of every clip and the title must name him (Lacy). Never show him in a negative light. No logos."
 
 [[channels]]
 name = "kaicenat"
 url = "https://www.twitch.tv/kaicenat"
 credit = "@kaicenat"
-hashtags = ["#kaicenat", "#gta6", "#streamer"]
-campaign_notes = "Kai Cenat GTA 6 pool campaign. Prefer GTA 6 moments."
+hashtags = ["#kaicenat", "#gta6"]
+campaign_notes = "Clipped & Shipped Kai Cenat GTA 6 pool. Only GTA 6 moments. Title should name Kai Cenat."
 
 [[channels]]
 name = "clix"
 url = "https://www.twitch.tv/clix"
 credit = "@clix"
-hashtags = ["#clix", "#gta6", "#fortnite"]
-campaign_notes = "Clix GTA VI marathon pool campaign. Prefer GTA 6 moments."
+hashtags = ["#Clix", "#gta6"]
+campaign_notes = "Reach Clix GTA VI Marathon pool. Only GTA 6 marathon moments. Clix must be the main focus and the title must name him. Never show him in a negative light. No logos."
