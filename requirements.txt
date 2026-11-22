@@ -1,0 +1,4 @@
+streamlink>=6.7
+yt-dlp
+faster-whisper>=1.0
+requests

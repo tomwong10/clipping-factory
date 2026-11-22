@@ -1,0 +1,16 @@
+[Unit]
+Description=Clip Factory (records streams and makes clips)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=__USER__
+WorkingDirectory=__DIR__
+Environment=HOME=__HOME__
+Environment=PATH=__HOME__/.local/bin:__DIR__/.venv/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=__DIR__/.venv/bin/python -m factory watch
+Restart=always
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

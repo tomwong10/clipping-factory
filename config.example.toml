@@ -1,0 +1,43 @@
+# Clip Factory settings. Copy this file to config.toml and edit it.
+# Lines starting with # are notes and are ignored.
+
+[general]
+whisper_model = "small"     # tiny / base / small / medium. Bigger = better captions but slower
+language = "en"             # language of the streams ("" = auto-detect)
+chunk_minutes = 45          # streams are recorded and clipped in chunks this long
+clips_per_hour = 4          # how many clips to aim for per hour of stream
+min_clip_seconds = 15
+max_clip_seconds = 60
+layout = "blur"             # "blur" = full video on a blurred background, "crop" = zoomed centre crop
+check_every_seconds = 120   # how often to check if a channel has gone live
+keep_raw = false            # false = delete recordings after clipping (saves disk space)
+keep_ready_days = 3         # delete finished clips from the server after this many days
+send_to_telegram = true
+
+# One [[channels]] block per streamer.
+# name: short name, letters and numbers only (no spaces or underscores)
+# url: their channel page (Twitch, Kick or YouTube /live link)
+# credit: text shown at the top of every clip
+# hashtags: always added to the caption
+# campaign_notes: paste the campaign rules here, the clip picker follows them
+
+[[channels]]
+name = "lacy"
+url = "https://www.twitch.tv/lacy"
+credit = "@lacy"
+hashtags = ["#lacy", "#gta6", "#streamer"]
+campaign_notes = "Lacy GTA VI marathon pool campaign. Prefer GTA 6 moments."
+
+[[channels]]
+name = "kaicenat"
+url = "https://www.twitch.tv/kaicenat"
+credit = "@kaicenat"
+hashtags = ["#kaicenat", "#gta6", "#streamer"]
+campaign_notes = "Kai Cenat GTA 6 pool campaign. Prefer GTA 6 moments."
+
+[[channels]]
+name = "ishowspeed"
+url = "https://www.youtube.com/@IShowSpeed/live"
+credit = "@ishowspeed"
+hashtags = ["#ishowspeed", "#speed"]
+campaign_notes = "Check the Expedia x IShowSpeed brief: it may only accept footage from specific streams."
