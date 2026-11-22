@@ -7,8 +7,8 @@ Records live streams overnight, finds the best moments, cuts them to vertical 9:
 ## Setup on the server (Ubuntu 24.04)
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/clip-factory.git
-cd clip-factory
+git clone https://github.com/tomwong10/clipping-factory.git
+cd clipping-factory
 chmod +x install.sh
 ./install.sh
 ```
