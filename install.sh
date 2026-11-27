@@ -7,6 +7,13 @@ echo "==> Installing system tools (ffmpeg, python, git)..."
 sudo apt-get update
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y ffmpeg python3 python3-venv python3-pip git curl fontconfig tmux
 
+if ! swapon --show | grep -q /swapfile; then
+  echo "==> Adding 4 GB of swap memory (stops crashes on small servers)..."
+  sudo fallocate -l 4G /swapfile && sudo chmod 600 /swapfile && sudo mkswap /swapfile && sudo swapon /swapfile
+  grep -q '/swapfile' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+fi
+sudo timedatectl set-timezone Europe/London || true
+
 echo "==> Installing Python packages (streamlink, yt-dlp, faster-whisper)..."
 python3 -m venv .venv
 .venv/bin/pip install --upgrade pip

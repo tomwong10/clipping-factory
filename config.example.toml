@@ -2,7 +2,7 @@
 # Lines starting with # are notes and are ignored.
 
 [general]
-whisper_model = "small"     # tiny / base / small / medium. Bigger = better captions but slower
+whisper_model = "base"      # tiny / base / small / medium. Bigger = better captions but slower ("base" suits a 2 GB server)
 language = "en"             # language of the streams ("" = auto-detect)
 chunk_minutes = 45          # streams are recorded and clipped in chunks this long
 clips_per_hour = 4          # how many clips to aim for per hour of stream
@@ -24,6 +24,7 @@ disclosure = "#ad"           # paid-clip disclosure: shown on screen for 3s and 
 
 [[channels]]
 name = "lacy"
+enabled = false             # paused for now, set to true to switch Lacy back on
 url = "https://www.twitch.tv/lacy"
 credit = "@lacy"
 hashtags = ["#LACY", "#gta6"]
